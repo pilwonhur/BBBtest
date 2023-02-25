@@ -82,7 +82,8 @@ int main() {
   writeRegister(0x1A, 0x06); // Set accelerometer and gyroscope to 1kHz sample rate
   writeRegister(0x1B, 0x18); // Set gyroscope range to +/-2000 degrees/second
   writeRegister(0x1C, 0x08); // Set accelerometer range to +/-4g
-  write_byte(0x0C,0x37, 0x02);
+  writeRegister(0x37, 0x02);
+//  write_byte(0x0C,0x37, 0x02);
 //  i2c_smbus_write_byte_data(file, 0x37, 0x02); // Enable bypass mode for magnetometer
   usleep(100000);
   // Initialize the AK8963 magnetometer
